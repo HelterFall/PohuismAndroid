@@ -12,15 +12,30 @@
     android:clickable="true"
     android:focusable="true">
 
-    <TextView
-        android:id="@+id/avatarText"
+    <FrameLayout
         android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:background="@drawable/bg_avatar"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textStyle="bold" />
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/avatarText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_avatar"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/avatarImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_avatar"
+            android:clipToOutline="true"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="Аватар контакта" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/contactName"
