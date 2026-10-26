@@ -1,0 +1,41 @@
+name: Firebase Functions TypeScript
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "functions/**"
+      - "firebase.json"
+      - "firestore.rules"
+      - ".github/workflows/firebase-functions.yml"
+  pull_request:
+    paths:
+      - "functions/**"
+      - "firebase.json"
+      - "firestore.rules"
+      - ".github/workflows/firebase-functions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  typecheck:
+    name: Build server functions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        working-directory: functions
+        run: npm install --no-audit --no-fund
+
+      - name: Compile TypeScript
+        working-directory: functions
+        run: npm run build
