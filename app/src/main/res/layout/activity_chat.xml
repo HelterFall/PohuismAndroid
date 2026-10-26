@@ -82,8 +82,7 @@
             android:textColorHint="#8996A3"
             android:textSize="16sp"
             android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
-            android:imeOptions="actionNone"
-            android:showSoftInputOnFocus="false" />
+            android:imeOptions="actionNone" />
 
         <Button
             android:id="@+id/sendButton"
