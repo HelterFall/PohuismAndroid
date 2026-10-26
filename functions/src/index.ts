@@ -18,7 +18,7 @@ const UID_PATTERN = /^[^/]{1,128}$/;
 const HASH_PATTERN = /^[a-f0-9]{64}$/;
 
 function requirePhoneUid(request: {
-  auth: { uid: string; token: { phone_number?: unknown } } | null;
+  auth?: { uid: string; token: { phone_number?: unknown } } | null;
 }): string {
   const auth = request.auth;
   if (!auth?.uid) {
