@@ -94,7 +94,7 @@ class ChatActivity : Activity() {
         keyboardRows.removeAllViews()
 
         val topRow = if (isSymbolsLayout) {
-            listOf("1234567890", "@#$%&*-+=", "()[]{}")
+            listOf("1234567890", "@#\$%&*-+=", "()[]{}")
         } else if (isEnglishLayout) {
             listOf("qwertyuiop", "asdfghjkl")
         } else {
