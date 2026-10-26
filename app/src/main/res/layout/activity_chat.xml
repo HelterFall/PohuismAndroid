@@ -81,8 +81,9 @@
             android:textColor="#17212B"
             android:textColorHint="#8996A3"
             android:textSize="16sp"
-            android:inputType="textCapSentences|textAutoCorrect"
-            android:imeOptions="actionSend" />
+            android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+            android:imeOptions="actionNone"
+            android:showSoftInputOnFocus="false" />
 
         <Button
             android:id="@+id/sendButton"
@@ -97,4 +98,25 @@
             android:textSize="14sp"
             android:backgroundTint="#229ED9" />
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/customKeyboardPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="#DDE3EB"
+        android:visibility="gone"
+        android:importantForAccessibility="yes">
+
+        <LinearLayout
+            android:id="@+id/keyboardRows"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+
 </LinearLayout>
