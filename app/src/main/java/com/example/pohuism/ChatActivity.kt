@@ -125,7 +125,7 @@ class ChatActivity : Activity() {
                 }
             }
         } else {
-            "/:;!?'\".forEach { character ->
+            listOf("/", ":", ";", "!", "?", "'", "\"").forEach { character ->
                 addKey(thirdRow, character.toString()) { insertText(character.toString()) }
             }
         }
