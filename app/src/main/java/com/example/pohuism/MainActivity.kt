@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        hideSystemBars()
         setContentView(R.layout.activity_main)
 
         val contacts = listOf(
@@ -28,5 +29,10 @@ class MainActivity : Activity() {
                 )
             }
         }
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) hideSystemBars()
     }
 }
